@@ -17,7 +17,7 @@ export const MyDrawer = () => {
           <SafeAreaView style={{flex: 1, paddingTop: 20, backgroundColor: '#99f6e4'}}>
             <View style={{justifyContent: 'center', alignItems: 'center', height: 140}}>
               <Image
-                style={{width: 100, resizeMode: 'contain'}}
+                style={{width: 100,  height: 100, resizeMode: 'contain'}}
                 source={require('../assets/images/logos/logo.png')}
               />
             </View>

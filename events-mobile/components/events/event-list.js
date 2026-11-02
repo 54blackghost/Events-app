@@ -10,7 +10,7 @@ const EventList = ({ data }) => {
         return <EventItem id={item.id} name={item.name} description={item.description} qrCode={item.qrCode} />
     }
     return (
-        <View>
+        <View >
            <FlatList
                 data={data}
                 keyExtractor={item => item.id}

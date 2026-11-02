@@ -6,8 +6,10 @@ const EventItem = ({id, name, description, qrCode}) => {
     const navigation = useNavigation();
     return ( 
         <TouchableOpacity style={styles.card} onPress={()=>navigation.navigate('Event', { eventId: id, title: name, description: description, qrCode: qrCode})}>
-            <Text>{name}</Text>
-            <Text>{description}</Text>
+            <View>
+                  <Text>{name}</Text>
+                  <Text>{description}</Text>
+            </View>
             <Image
                 style={{ width: 100, height: 100 }}
                 source={{ uri: qrCode }}
@@ -20,7 +22,11 @@ const EventItem = ({id, name, description, qrCode}) => {
 
 const styles = StyleSheet.create({
     card: {
+       flexDirection: 'row',
+       backgroundColor: 'white',
        borderWidth: 1,
+       alignItem: 'center',
+       justifyContent: 'space-between',
        borderColor: '#c5c5c5',
        borderRadius: 10,
        marginVertical: 5,

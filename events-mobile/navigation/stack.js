@@ -8,6 +8,7 @@ import { useNavigation } from '@react-navigation/native';
 import ProfilesScreen from '../screens/profiles/profiles-screen';
 import ProfileDetailScreen from '../screens/profiles/profiles-detail-screen';
 import { HomeTabs } from './tabs';
+import NewEventScreen from '../screens/new-event-screen';
 
 
 
@@ -34,6 +35,14 @@ export const HomeStack = () => {
       component={EventDetailScreen}
       options={{
       title: 'Event',
+      headerTitleAlign: 'center',
+      }}
+    />
+    <Stack.Screen 
+      name="New Event"
+      component={NewEventScreen}
+      options={{
+      title: 'New Event',
       headerTitleAlign: 'center',
       }}
     />

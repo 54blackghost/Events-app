@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { StyleSheet, Text, View, FlatList, ActivityIndicator, Image } from 'react-native';
 
-const API_BASE_URL = 'http://192.168.1.25:8000'; // Remplace par ton IP locale ou ngrok
+const API_BASE_URL = 'http://192.168.0.124:8000'; // Remplace par ton IP locale ou ngrok
 
 export default function HomeScreen() {
   const [events, setEvents] = useState([]);
@@ -41,7 +41,13 @@ export default function HomeScreen() {
         keyExtractor={(item) => item.id.toString()}
         renderItem={({ item }) => {
           // Remplacer 127.0.0.1 par l'IP dynamique pour afficher l'image du QR code sur mobile
-          const qrCodeUrl = item.qr_code.replace('127.0.0.1:8000', '192.168.1.15:8000');
+         // const qrCodeUrl = item.qr_code.replace('127.0.0.1:8000', '192.168.0.124:8000');
+
+          const qrCodeUrl = item.qr_code
+            ? item.qr_code
+                .replace('127.0.0.1:8000', '192.168.0.124:8000')
+                .replace('localhost:8000', '192.168.0.124:8000')
+            : null;
 
           return (
             <View style={styles.card}>
